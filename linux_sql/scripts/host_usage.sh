@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Capture CLI Arguments
+# --- Capture CLI Arguments ---
 psql_host=$1
 psql_port=$2
 db_name=$3
@@ -12,20 +12,31 @@ if [ "$#" -ne 5 ]; then
   exit 1
 fi
 
-vmstat_mb=$(vmstat --unit M)
+# --- Helper function to extract last value from a command ---
+get_last_value() {
+    # Usage: get_last_value "command" column_number (optional)
+    local cmd="$1"
+    local col="$2"
+    if [ -z "$col" ]; then
+        eval "$cmd" | tail -1 | xargs
+    else
+        eval "$cmd" | awk "{print \$$col}" | tail -1 | xargs
+    fi
+}
+
 hostname=$(hostname -f)
 
-# Retrieve hardware specification variables
-memory_free=$(echo "$vmstat_mb" | awk '{print $4}'| tail -1 | xargs)
-cpu_idle=$(echo "$vmstat_mb" | awk '{print $15}' | tail -1 | xargs)
-cpu_kernel=$(echo "$vmstat_mb" | awk '{print $14}' | tail -1 | xargs)
-disk_io=$(vmstat -d | awk '{print $10}' | tail -1 | xargs)
-disk_available=$(df -BM / | awk '{print $4}' | tail -1 | sed 's/M//' | xargs)
-timestamp=$(vmstat -t | awk '{print $18, $19}' | tail -1 | xargs)
+# --- Retrieve metrics ---
+memory_free=$(get_last_value "vmstat --unit M" 4)
+cpu_idle=$(get_last_value "vmstat --unit M" 15)
+cpu_kernel=$(get_last_value "vmstat --unit M" 14)
+disk_io=$(get_last_value "vmstat -d" 10)
+disk_available=$(get_last_value "df -BM /" 4 | sed 's/M//')
+timestamp=$(date '+%Y-%m-%d %H:%M:%S')
 
-host_id="(SELECT id FROM host_info WHERE hostname='$hostname')";
+host_id="(SELECT id FROM host_info WHERE hostname='$hostname')"
 
-
+# --- Build SQL insert ---
 insert_stmt="INSERT INTO host_usage(
   \"timestamp\",
   disk_available,
@@ -44,11 +55,7 @@ insert_stmt="INSERT INTO host_usage(
   $host_id
 );"
 
-#set up env var for pql cmd
+# --- Execute SQL ---
 export PGPASSWORD=$psql_password
-#Insert date into a database
 psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -c "$insert_stmt"
 exit $?
-
-
-
