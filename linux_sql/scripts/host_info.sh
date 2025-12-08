@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# --- Capture CLI Arguments ---
+# Capture CLI Arguments
 psql_host=$1
 psql_port=$2
 db_name=$3
@@ -12,7 +12,7 @@ if [ "$#" -ne 5 ]; then
   exit 1
 fi
 
-# --- Helper function to extract a field from lscpu ---
+# Helper function to extract a field from lscpu
 get_lscpu_field() {
     local pattern=$1
     local col=$2
@@ -30,7 +30,7 @@ l2_cache=$(get_lscpu_field "^L2.+" 3)
 total_mem=$(vmstat | awk '{print $4}' | tail -1 | xargs)
 timestamp=$(vmstat -t | awk '{print $18, $19}' | tail -1 | xargs)
 
-# --- Insert into PostgreSQL ---
+# Insert into PostgreSQL
 insert_stmt="INSERT INTO host_info(
   \"timestamp\",
   total_mem,
