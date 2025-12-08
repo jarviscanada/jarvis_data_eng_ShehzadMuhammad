@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Capture CLI Arguments
+# --- Capture CLI Arguments ---
 psql_host=$1
 psql_port=$2
 db_name=$3
@@ -12,17 +12,25 @@ if [ "$#" -ne 5 ]; then
   exit 1
 fi
 
+# --- Helper function to extract a field from lscpu ---
+get_lscpu_field() {
+    local pattern=$1
+    local col=$2
+    echo "$lscpu_out" | grep -E "$pattern" | awk "{print \$$col}" | xargs
+}
+
 lscpu_out=$(lscpu)
 
 hostname=$(hostname -f)
-cpu_number=$(echo "$lscpu_out" | egrep "^CPU\(s\)" | awk '{print $2}' | xargs)
-cpu_architecture=$(echo "$lscpu_out" | egrep "^Arch.*" | awk '{print $2}' | xargs)
-cpu_model=$(echo "$lscpu_out" | egrep "^Model name:" | awk -F: '{print $2}' | xargs)
-cpu_mhz=$(echo "$lscpu_out" | egrep "^Model name:" | sed 's/.*@//' | sed 's/GHz//' | awk '{printf "%.3f", $1 * 1000}' | xargs)
-l2_cache=$(echo "$lscpu_out" | egrep "^L2.+" | awk '{print $3}' | xargs)
+cpu_number=$(get_lscpu_field "^CPU\\(s\\)" 2)
+cpu_architecture=$(get_lscpu_field "^Arch.*" 2)
+cpu_model=$(echo "$lscpu_out" | grep -E "^Model name:" | awk -F: '{print $2}' | xargs)
+cpu_mhz=$(echo "$cpu_model" | sed 's/.*@//' | sed 's/GHz//' | awk '{printf "%.3f", $1 * 1000}')
+l2_cache=$(get_lscpu_field "^L2.+" 3)
 total_mem=$(vmstat | awk '{print $4}' | tail -1 | xargs)
 timestamp=$(vmstat -t | awk '{print $18, $19}' | tail -1 | xargs)
 
+# --- Insert into PostgreSQL ---
 insert_stmt="INSERT INTO host_info(
   \"timestamp\",
   total_mem,
@@ -43,15 +51,6 @@ insert_stmt="INSERT INTO host_info(
   '$hostname'
 );"
 
-#set up env var for pql cmd
 export PGPASSWORD=$psql_password
-#Insert date into a database
-psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -c "$insert_stmt"
+psql -h "$psql_host" -p "$psql_port" -d "$db_name" -U "$psql_user" -c "$insert_stmt"
 exit $?
-
-
-
-
-
-
-
