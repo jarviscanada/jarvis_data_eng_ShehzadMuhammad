@@ -1,0 +1,92 @@
+{
+  "education": [
+    {
+      "awards_achievements": null,
+      "degree": "Bachelor of Science",
+      "department": "Computer Science",
+      "duration": "2014-2018",
+      "school_name": "Toronto Metropolitan University"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_ShehzadMuhammad",
+  "highlighted_projects": [
+    {
+      "description": "Developed an e-commerce platform that enables customers to order hookah products for in-person delivery. Built the frontend using React and TypeScript, and implemented the backend using Python, Django, and GraphQL to support product listings, ordering, and data management.",
+      "git_url": "https://github.com/ShehzadMuhammad/shishafy",
+      "name": "Shishafy"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Developed a Linux cluster monitoring agent for the Jarvis Linux Cluster Administration (LCA) team that collects hardware specifications and real-time resource usage, including CPU and memory metrics, from Rocky Linux server nodes. Stored collected data in a PostgreSQL database to enable querying, reporting, and historical analysis for capacity planning and cluster scaling decisions. Delivered the project as a minimum viable product (MVP) to support performance tracking and data-driven infrastructure planning.",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": "Developed a data analytics proof of concept (PoC) for London Gift Shop (LGS), a UK-based online giftware retailer, to analyze customer purchasing behavior and support data-driven sales and marketing decisions. Processed and analyzed historical transaction data using Python, Jupyter Notebook, Pandas, and NumPy, performing data cleaning, aggregation, and exploratory analysis. Delivered actionable insights on product performance, customer trends, and seasonality to enable targeted marketing campaigns and revenue growth initiatives.",
+      "git_url": "/python_data_analytics",
+      "name": "Python Data Analytics"
+    }
+  ],
+  "name": "Shehzad Muhammad",
+  "others": [
+    {
+      "bullets": [
+        "Basketball/Football and UFC fan",
+        "Avid Comic Book reader",
+        "Volunteered at a coding bootcamp teaching 9-10 year olds how to code in Java"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Develop production-style software solutions as part of Jarvis?s talent incubation program, focusing on backend, data, and infrastructure-oriented projects. Design and implement systems including a Linux cluster monitoring agent that collects hardware specifications and real-time resource metrics, stores data in PostgreSQL, and supports reporting and capacity planning. Apply industry best practices such as version control, documentation, testing, and agile collaboration while delivering minimum viable products.",
+      "duration": "2024 - Present",
+      "title": "Software Developer"
+    },
+    {
+      "company": "GQ Consultancy",
+      "description": "Design and develop a mobile application from the ground up in a small team using React Native (Expo), TypeScript, Next.js, and Node.js (NestJS), delivering a scalable, production-ready MVP. Own full-stack feature development by translating high-level goals into technical designs, APIs, and user experiences while driving sprint planning and cross-team collaboration.",
+      "duration": "June 2025 - Nov 2025",
+      "title": "Software Engineer"
+    },
+    {
+      "company": "ResQ",
+      "description": "Develop full-stack web and mobile features using Django, React, React Native, and TypeScript. Lead initiatives including a callback work order system and a vendor-customer messaging feature with 35% adoption. Optimize GraphQL queries and implement lazy loading to improve performance by 28%, while collaborating closely with product, design, and operations teams.",
+      "duration": "Feb 2022 - Feb 2024",
+      "title": "Software Engineer"
+    },
+    {
+      "company": "Xactly Corp",
+      "description": "Support Xactly?s Obero platform by troubleshooting complex Microsoft SQL Server and Excel issues, reducing average resolution time from seven to three days. Conduct customer-facing investigations, clearly communicate technical solutions, and analyze stored procedures to resolve performance slowdowns in data loads and reporting, improving processing times by up to 15%.",
+      "duration": "Aug 2019 - Feb 2022",
+      "title": "Technical Support Engineer"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "Linux/Bash",
+      "Java",
+      "Pandas/Numpy",
+      "GraphQL",
+      "Rest API"
+    ],
+    "familiar": [
+      "Docker",
+      "AWS",
+      "Datadog",
+      "Sentry",
+      "GCP"
+    ],
+    "proficient": [
+      "Javascript/Typescript/React/React Native/NodeJs/NestJs",
+      "Python/Django",
+      "RDBMS/SQL",
+      "Agile/Scrum",
+      "Git"
+    ]
+  },
+  "summary": "I am a technology professional with over five years of experience in software engineering and technical support. I have worked on full-stack systems, building features end-to-end while also supporting and explaining technical solutions to a wide range of stakeholders. I am excited by the opportunity to impact people through my work and to use technology in many different ways to do so. My background allows me to combine strong technical skills with clear communication,  enabling me to deliver practical, effective solutions."
+}

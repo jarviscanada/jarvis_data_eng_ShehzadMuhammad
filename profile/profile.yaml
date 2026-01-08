@@ -1,0 +1,96 @@
+# Preferred name (Characters only)
+name: "Shehzad Muhammad"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_ShehzadMuhammad
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I am a technology professional with over five years of experience in software engineering and technical support. I have worked on full-stack systems, building features end-to-end while also supporting and explaining technical solutions to a wide range of stakeholders. I am excited by the opportunity to impact people through my work and to use technology in many different ways to do so. My background allows me to combine strong technical skills with clear communication,  enabling me to deliver practical, effective solutions.
+
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Javascript/Typescript/React/React Native/NodeJs/NestJs
+    - Python/Django
+    - RDBMS/SQL
+    - Agile/Scrum
+    - Git
+  # At least 5 skills
+  competent:
+    - Linux/Bash
+    - Java
+    - Pandas/Numpy
+    - GraphQL
+    - Rest API
+  # At least 5 skills
+  familiar:
+    - Docker
+    - AWS
+    - Datadog
+    - Sentry
+    - GCP
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Developed a Linux cluster monitoring agent for the Jarvis Linux Cluster Administration (LCA) team that collects hardware specifications and real-time resource usage, including CPU and memory metrics, from Rocky Linux server nodes. Stored collected data in a PostgreSQL database to enable querying, reporting, and historical analysis for capacity planning and cluster scaling decisions. Delivered the project as a minimum viable product (MVP) to support performance tracking and data-driven infrastructure planning.
+  - name: "Python Data Analytics"
+    git_url: "/python_data_analytics"
+    description: "Developed a data analytics proof of concept (PoC) for London Gift Shop (LGS), a UK-based online giftware retailer, to analyze customer purchasing behavior and support data-driven sales and marketing decisions. Processed and analyzed historical transaction data using Python, Jupyter Notebook, Pandas, and NumPy, performing data cleaning, aggregation, and exploratory analysis. Delivered actionable insights on product performance, customer trends, and seasonality to enable targeted marketing campaigns and revenue growth initiatives."
+
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Shishafy"
+    #URL is optional
+    git_url: "https://github.com/ShehzadMuhammad/shishafy"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Developed an e-commerce platform that enables customers to order hookah products for in-person delivery. Built the frontend using React and TypeScript, and implemented the backend using Python, Django, and GraphQL to support product listings, ordering, and data management."
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2024 - Present"
+    description: "Develop production-style software solutions as part of Jarvis?s talent incubation program, focusing on backend, data, and infrastructure-oriented projects. Design and implement systems including a Linux cluster monitoring agent that collects hardware specifications and real-time resource metrics, stores data in PostgreSQL, and supports reporting and capacity planning. Apply industry best practices such as version control, documentation, testing, and agile collaboration while delivering minimum viable products."
+  - title: "Software Engineer"
+    company: "GQ Consultancy"
+    duration: "June 2025 - Nov 2025"
+    description: "Design and develop a mobile application from the ground up in a small team using React Native (Expo), TypeScript, Next.js, and Node.js (NestJS), delivering a scalable, production-ready MVP. Own full-stack feature development by translating high-level goals into technical designs, APIs, and user experiences while driving sprint planning and cross-team collaboration."
+  - title: "Software Engineer"
+    company: "ResQ"
+    duration: "Feb 2022 - Feb 2024"
+    description: "Develop full-stack web and mobile features using Django, React, React Native, and TypeScript. Lead initiatives including a callback work order system and a vendor-customer messaging feature with 35% adoption. Optimize GraphQL queries and implement lazy loading to improve performance by 28%, while collaborating closely with product, design, and operations teams."
+  - title: "Technical Support Engineer"
+    company: "Xactly Corp"
+    duration: "Aug 2019 - Feb 2022"
+    description: "Support Xactly?s Obero platform by troubleshooting complex Microsoft SQL Server and Excel issues, reducing average resolution time from seven to three days. Conduct customer-facing investigations, clearly communicate technical solutions, and analyze stored procedures to resolve performance slowdowns in data loads and reporting, improving processing times by up to 15%."
+
+#List of education
+education: 
+  - school_name: "Toronto Metropolitan University"
+    duration: "2014-2018"
+    degree: "Bachelor of Science"
+    department: "Computer Science"
+    # optional
+    awards_achievements:
+
+
+#Optional section
+others:
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Basketball/Football and UFC fan"
+      - "Avid Comic Book reader"
+      - "Volunteered at a coding bootcamp teaching 9-10 year olds how to code in Java"
